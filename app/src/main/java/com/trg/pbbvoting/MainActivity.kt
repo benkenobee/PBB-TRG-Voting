@@ -78,7 +78,7 @@ class MainActivity : Activity() {
         }
         scroll.addView(
             panel,
-            ScrollView.LayoutParams(
+            FrameLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT
             )
