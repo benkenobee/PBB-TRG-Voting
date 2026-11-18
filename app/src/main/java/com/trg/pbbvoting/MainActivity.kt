@@ -7,11 +7,13 @@ import android.graphics.Color
 import android.graphics.Typeface
 import android.graphics.drawable.GradientDrawable
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.util.Patterns
 import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowInsets
 import android.widget.Button
 import android.widget.EditText
 import android.widget.FrameLayout
@@ -241,6 +243,20 @@ class MainActivity : Activity() {
                     "Please install an email app",
                     Toast.LENGTH_LONG
                 ).show()
+            }
+        }
+
+        // Android 15+ draws edge-to-edge; keep the form clear of system bars.
+        if (Build.VERSION.SDK_INT >= 35) {
+            root.setOnApplyWindowInsetsListener { _, insets ->
+                val bars = insets.getInsets(WindowInsets.Type.systemBars())
+                scroll.setPadding(
+                    dp(18) + bars.left,
+                    dp(26) + bars.top,
+                    dp(18) + bars.right,
+                    dp(26) + bars.bottom
+                )
+                insets
             }
         }
 
