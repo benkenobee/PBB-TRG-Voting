@@ -1,27 +1,22 @@
 plugins {
     id("com.android.application")
-    id("org.jetbrains.kotlin.android")
 }
 
 android {
     namespace = "com.trg.pbbvoting"
-    compileSdk = 35
+    compileSdk = 37
 
     defaultConfig {
         applicationId = "com.trg.pbbvoting"
-        minSdk = 23
-        targetSdk = 28
-        versionCode = 1
-        versionName = "1.0"
+        minSdk = 31
+        targetSdk = 37
+        versionCode = 2
+        versionName = "2.0"
     }
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
-    }
-
-    kotlinOptions {
-        jvmTarget = "17"
     }
 }
 
